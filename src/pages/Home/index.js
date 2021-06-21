@@ -22,11 +22,11 @@ const Home = ({navigation}) => {
         <ScrollView>
           <Header2/>      
           <View style={styles.section}>
-             <Image source={require('../../assets/img/Control.png')} style={{width:206, height:247}} />
+             <Image source={require('../../assets/img/Control.png')} style={{width:160, height:192}} />
               <Title
                   title="Dashboard"
                 />
-                <View style={{alignItems:'center',paddingTop:25}}>
+                <View style={{alignItems:'center',paddingTop:35}}>
                   <View style={{flexDirection:'row', height:70}}>
                       <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Absent')}>
                           <IconKehadiran width={55} height={70}/>
@@ -58,6 +58,7 @@ const Home = ({navigation}) => {
                       </TouchableOpacity>
                   </View>
                 </View>
+                <Text style={styles.text}>SSB Putra Debes Berkomitmen untuk memajukan Sepakbola Tabanan</Text>
           </View>
         </ScrollView> 
         <Footer
@@ -77,10 +78,11 @@ const styles = StyleSheet.create({
       alignItems:'center'
     },
     text:{
+      paddingTop:30,
       paddingHorizontal:30, 
       fontSize:16, 
       color:'#696969',
-      textAlign:'justify'
+      textAlign:'center'
     },
     icon:{
       flex:1,
