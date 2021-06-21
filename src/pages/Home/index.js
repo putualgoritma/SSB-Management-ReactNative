@@ -4,22 +4,60 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import { Footer,Header2,Title} from '../../component';
+import IconKehadiran from '../../assets/icon/IconKehadiran.svg';
+import IconSPP from '../../assets/icon/IconSPP.svg'
+import IconUjian from '../../assets/icon/IconUjian.svg'
+import IconJadwal from'../../assets/icon/IconJadwal.svg'
+import IconDNP from '../../assets/icon/IconDNP.svg'
+import IconTahun from '../../assets/icon/IconTahun.svg'
+import IconRaport from '../../assets/icon/IconRaport.svg'
+import IconMaster from '../../assets/icon/IconMaster.svg'
 const Home = ({navigation}) => {
     return (
     <View style={styles.container}> 
         <ScrollView>
           <Header2/>      
           <View style={styles.section}>
-             <Image source={require('../../assets/img/Jagling.png')} style={{width:132, height:303}} />
+             <Image source={require('../../assets/img/Control.png')} style={{width:206, height:247}} />
               <Title
-                  title="SSB"
+                  title="Dashboard"
                 />
-              <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit ipsum, tristique ut enim non, mollis consequat ex. Quisque et eros at dolor laoreet facilisis ac eget ipsum. 
-              </Text>
+                <View style={{alignItems:'center',paddingTop:25}}>
+                  <View style={{flexDirection:'row', height:70}}>
+                      <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Absent')}>
+                          <IconKehadiran width={55} height={70}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Bill')} >
+                          <IconSPP width={55} height={70}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Test')}>
+                          <IconUjian width={55} height={70}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Schedule')}>
+                          <IconJadwal width={55} height={70}/>
+                      </TouchableOpacity>
+                  </View>
+                </View>
+                <View style={{alignItems:'center',paddingTop:25}}>
+                  <View style={{flexDirection:'row', height:70}}>
+                      <TouchableOpacity style={styles.icon}onPress={() =>navigation.navigate('Dnp')}>
+                          <IconDNP width={55} height={70}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.icon}onPress={() =>navigation.navigate('Periode')}>
+                          <IconTahun width={55} height={70}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.icon}onPress={() =>navigation.navigate('Home')}>
+                          <IconRaport width={55} height={70}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.icon}onPress={() =>navigation.navigate('Master')}>
+                          <IconMaster width={55} height={70}/>
+                      </TouchableOpacity>
+                  </View>
+                </View>
           </View>
         </ScrollView> 
         <Footer
@@ -43,6 +81,10 @@ const styles = StyleSheet.create({
       fontSize:16, 
       color:'#696969',
       textAlign:'justify'
+    },
+    icon:{
+      flex:1,
+      alignItems:'center'
     }
 });
 export default Home;
