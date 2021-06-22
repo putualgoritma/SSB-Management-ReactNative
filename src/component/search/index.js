@@ -11,7 +11,7 @@ const search = (props) =>{
 }
 const styles = StyleSheet.create({
 input:{
-    width:'80%',
+    width:'70%',
     borderWidth:1,
     backgroundColor:'#ffffff',
     borderColor:'#D6D9DB',

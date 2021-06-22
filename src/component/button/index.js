@@ -7,7 +7,7 @@ import {
   } from 'react-native';
 const button =(props)=>{
     return(
-        <TouchableOpacity style={{width: (props.width ? props.width : '30%'),alignItems : 'center', backgroundColor:'#54B3B9', padding : 10, borderRadius : 5}}
+        <TouchableOpacity style={{width: (props.width ? props.width : '30%'),alignItems : 'center', backgroundColor:'#54B3B9', padding : 15, borderRadius : 5}}
             onPress={props.onPress}
         >
            {/* <Button title={props.title} color="#54B3B9" onPress={props.login}></Button> */}
