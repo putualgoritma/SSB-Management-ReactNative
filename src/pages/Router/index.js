@@ -5,18 +5,32 @@ import Register from '../Register';
 import Home from '../Home';
 import Master from '../Master';
 import Student from '../Master/Student';
+import AddStudent from '../Master/Student/Add'
+import EditStudent from '../Master/Student/Edit'
 import DetailStudent from '../Master/Student/Detail';
 import Teacher from '../Master/Teacher';
+import AddTeacher from '../Master/Teacher/Add';
+import EditTeacher from '../Master/Teacher/Edit';
 import DetailTeacher from '../Master/Teacher/Detail';
 import Grade from '../Master/Grade';
+import AddGrade from '../Master/Grade/Add';
+import EditGrade from '../Master/Grade/Edit';
 import DetailGrade from '../Master/Grade/Detail';
 import Semester from '../Master/Semester';
+import AddSemester from '../Master/Semester/Add';
+import EditSemester from '../Master/Semester/Edit';
 import DetailSemester from '../Master/Semester/Detail';
 import Periode from '../Master/Periode';
+import AddPeriode from '../Master/Periode/Add';
+import EditPeriode from '../Master/Periode/Edit'
 import DetailPeriode from '../Master/Periode/Detail';
 import Team from '../Master/Team';
+import AddTeam from '../Master/Team/Add';
+import EditTeam from '../Master/Team/Edit';
 import DetailTeam from '../Master/Team/Detail';
 import Subject from '../Master/Subject';
+import AddSubject from '../Master/Subject/Add';
+import EditSubject from '../Master/Subject/Edit';
 import DetailSubject from '../Master/Subject/Detail';
 import Akademic from '../Akademic';
 import Schedule from '../Akademic/Schedule';
@@ -56,12 +70,28 @@ const Router = () => {
                 component={Student} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
+                name="AddStudent" 
+                component={AddStudent} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="EditStudent" 
+                component={EditStudent} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
                 name="DetailStudent" 
                 component={DetailStudent} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="Teacher" 
                 component={Teacher} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="AddTeacher" 
+                component={AddTeacher} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="EditTeacher" 
+                component={EditTeacher} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="DetailTeacher" 
@@ -72,12 +102,28 @@ const Router = () => {
                 component={Grade} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
+                name="AddGrade"
+                component={AddGrade}
+                options={{headerShown:false}}/>
+            <Stack.Screen
+                name="EditGrade"
+                component={EditGrade}
+                options={{headerShown:false}}/>
+            <Stack.Screen 
                 name="DetailGrade" 
                 component={DetailGrade} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="Semester" 
                 component={Semester} 
+                options={{headerShown:false}}/>
+            <Stack.Screen
+                name="AddSemester"
+                component={AddSemester}
+                options={{headerShown:false}}/>
+            <Stack.Screen
+                name="EditSemester"
+                component={EditSemester}
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="DetailSemester" 
@@ -92,8 +138,24 @@ const Router = () => {
                 component={DetailPeriode} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
+                name="AddPeriode" 
+                component={AddPeriode} 
+                options={{headerShown:false}}/>
+            <Stack.Screen
+                name="EditPeriode"
+                component={EditPeriode}
+                options={{headerShown:false}}/>
+            <Stack.Screen 
                 name="Team" 
                 component={Team} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="AddTeam" 
+                component={AddTeam} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="EditTeam" 
+                component={EditTeam} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="DetailTeam" 
@@ -102,6 +164,14 @@ const Router = () => {
             <Stack.Screen 
                 name="Subject" 
                 component={Subject} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="AddSubject" 
+                component={AddSubject} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="EditSubject" 
+                component={EditSubject} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="DetailSubject" 

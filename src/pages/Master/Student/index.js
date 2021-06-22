@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { Col, Row, Rows, Table, TableWrapper } from 'react-native-table-component';
 import { useSelector } from 'react-redux';
-import { Button, Dropdown, Footer, Header2, Search, Spinner, Title } from '../../../component';
+import { Button, Dropdown, Footer, Header2, Search, Spinner, Title,ButtonAdd } from '../../../component';
 import API from '../../../service';
 import { colors } from '../../../utils/colors';
 import Distance from '../../../utils/distance';
@@ -46,11 +46,23 @@ const Student =({navigation})=>{
             item.name,
             item.grade.name,
             <View style={{padding : 4}} >
-              <TouchableOpacity style={{backgroundColor : colors.button, height : '100%', justifyContent : 'center'}}
+              <TouchableOpacity style={{backgroundColor : colors.button, height : 30, justifyContent : 'center'}}
                 onPress={() => navigation.navigate('DetailStudent', {student : item})}
               >
                 <Text style={{textAlign:"center", color : '#ffffff'}} >Details</Text>
               </TouchableOpacity>
+              <Distance distance={3}/>
+              <TouchableOpacity style={{backgroundColor :  '#163f5f', height : 30, justifyContent : 'center'}}
+                onPress={() => navigation.navigate('EditStudent')}
+                  >
+                <Text style={{textAlign:"center", color : '#ffffff'}} >Edit</Text>
+                </TouchableOpacity>
+                <Distance distance={3}/>
+                <TouchableOpacity style={{backgroundColor :  '#C53618', height : 30, justifyContent : 'center'}}
+                onPress={() => navigation.navigate('Student')}
+                  >
+                <Text style={{textAlign:"center", color : '#ffffff'}} >Delete</Text>
+                </TouchableOpacity>
             </View>
           ]
         })
@@ -124,10 +136,22 @@ const Student =({navigation})=>{
               item.name,
               item.grade.name,
               <View style={{padding : 4}} >
-                <TouchableOpacity style={{backgroundColor : colors.button, height : '100%', justifyContent : 'center'}}
+                <TouchableOpacity style={{backgroundColor : colors.button, height : 30, justifyContent : 'center'}}
                   onPress={() => navigation.navigate('DetailStudent', {student : item})}
                 >
                   <Text style={{textAlign:"center", color : '#ffffff'}} >Details</Text>
+                </TouchableOpacity>
+                <Distance distance={3}/>
+              <TouchableOpacity style={{backgroundColor :  '#163f5f', height : 30, justifyContent : 'center'}}
+                onPress={() => navigation.navigate('EditStudent')}
+                  >
+                <Text style={{textAlign:"center", color : '#ffffff'}} >Edit</Text>
+                </TouchableOpacity>
+                <Distance distance={3}/>
+                <TouchableOpacity style={{backgroundColor :  '#C53618', height : 30, justifyContent : 'center'}}
+                onPress={() => navigation.navigate('Student')}
+                  >
+                <Text style={{textAlign:"center", color : '#ffffff'}} >Delete</Text>
                 </TouchableOpacity>
               </View>
             ]
@@ -184,13 +208,17 @@ const Student =({navigation})=>{
               placeholder="<--Pilih Kelompok Umur-->"
               />
               <Distance distance = {5}/>
-              <Search
-                onChangeText = {(value) => setFilterStudent({...filterStudent, name : value})}
-              />
+              <View style={{flexDirection:'row'}}>
+                <Search
+                  onChangeText = {(value) => setFilterStudent({...filterStudent, name : value})}
+                />
+                <Distance distanceH = {5}/>
+                <Button title="Filter" onPress = {handleFilter} width="27%"/>
+              </View>
               <Distance distance = {5}/>
-              <Button title="Filter" onPress = {handleFilter}/>
-              <Distance distance = {5}/>
-
+              <Distance distance = {8}/>
+              <ButtonAdd onPress={() =>navigation.navigate('AddStudent')}/>
+              <Distance distance ={8}/>
               <View style={{height : '63%'}}>
                 <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}}>
                   <Row data={tableHead} flexArr={[1, 2, 1, 1]} style={styles.head} textStyle={styles.text}/>
@@ -200,7 +228,7 @@ const Student =({navigation})=>{
                 <ScrollView style={styles.dataWrapper}>
                   <Table borderStyle={{borderWidth: 1}}>
                     <TableWrapper style={styles.wrapper}>
-                      <Col data={tableTitle} style={styles.title} heightArr={[40,40]} textStyle={styles.text}/>
+                      <Col data={tableTitle} style={styles.title} heightArr={[120,120]} textStyle={styles.text}/>
                       <Rows data={tableData} flexArr={[2, 1, 1]} style={styles.row} textStyle={styles.text}/>
                     </TableWrapper>
                   </Table>       
@@ -237,7 +265,7 @@ const styles = StyleSheet.create({
   head: {  height: 40,  backgroundColor: '#f1f8ff'  },
   wrapper: { flexDirection: 'row' },
   title: { flex: 1, backgroundColor: '#f6f8fa' },
-  row: {  height: 40  },
+  row: {  height: 120  },
   text: { textAlign: 'center' },
   dataWrapper: { marginTop: -1 },
 });

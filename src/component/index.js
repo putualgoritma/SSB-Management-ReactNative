@@ -1,5 +1,6 @@
 import Footer from './footer'
 import Button from './button'
+import ButtonAdd from './button/buttonadd'
 import Header from './header'
 import Header1 from './header/header1'
 import Header2 from './header/header2'
@@ -21,6 +22,7 @@ import Spinner from './spinner'
 export {
     Footer,
     Button,
+    ButtonAdd,
     Header,
     Header1,
     Header2,
