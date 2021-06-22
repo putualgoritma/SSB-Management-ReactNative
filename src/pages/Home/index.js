@@ -58,7 +58,8 @@ const Home = ({navigation}) => {
                       </TouchableOpacity>
                   </View>
                 </View>
-                <Text style={styles.text}>SSB Putra Debes Berkomitmen untuk memajukan Sepakbola Tabanan</Text>
+                <Text style={styles.text}>SSB Putra Debes App</Text>
+                <View style={{alignItems:'center',paddingBottom:25}}></View>
           </View>
         </ScrollView> 
         <Footer
@@ -82,7 +83,8 @@ const styles = StyleSheet.create({
       paddingHorizontal:30, 
       fontSize:16, 
       color:'#696969',
-      textAlign:'center'
+      textAlign:'center',
+      fontWeight: "bold"
     },
     icon:{
       flex:1,
