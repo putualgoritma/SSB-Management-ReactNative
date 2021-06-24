@@ -63,7 +63,7 @@ const Login = ({navigation}) => {
         dispatch(SET_DATA_TOKEN(result.token.token))
         storeDataToken(result.token.token)
         setLoading(false)
-        alert('api sucesse');
+        //alert('api sucesse');
         navigation.replace('Home')
       }).catch((e) => {
         // console.log(e.request._response);
