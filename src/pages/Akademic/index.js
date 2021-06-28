@@ -16,6 +16,20 @@ const Akademic=({navigation})=>{
                         title="Pelajaran"
                     />
                     <Menu
+                        bgcolor="red"
+                        icon={faAddressBook}
+                        coloricon="red"
+                        title="New Absen"
+                        navigation={()=>navigation.navigate('AbsentGrade')}
+                    />
+                     <Menu
+                        bgcolor="blue"
+                        coloricon="blue"
+                        icon={faCalendarAlt}
+                        title="New Jadwal"
+                        navigation={()=>navigation.navigate('ScheduleGrade')}
+                    />
+                    <Menu
                         bgcolor="#1774BC"
                         icon={faAddressBook}
                         coloricon="#1774BC"

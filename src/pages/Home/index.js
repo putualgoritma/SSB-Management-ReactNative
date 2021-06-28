@@ -28,7 +28,7 @@ const Home = ({navigation}) => {
                 />
                 <View style={{alignItems:'center',paddingTop:35}}>
                   <View style={{flexDirection:'row', height:70}}>
-                      <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Absent')}>
+                      <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('AbsentGrade')}>
                           <IconKehadiran width={55} height={70}/>
                       </TouchableOpacity>
                       <TouchableOpacity style={styles.icon} onPress={() =>navigation.navigate('Bill')} >

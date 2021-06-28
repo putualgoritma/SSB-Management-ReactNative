@@ -34,17 +34,25 @@ import EditSubject from '../Master/Subject/Edit';
 import DetailSubject from '../Master/Subject/Detail';
 import Akademic from '../Akademic';
 import Schedule from '../Akademic/Schedule';
+import ScheduleGrade from '../Akademic/Schedule/Schedule-Grade';
+import ScheduleList from '../Akademic/Schedule/Schedule-List';
+import AddSchedule from '../Akademic/Schedule/Add';
 import DetailSchedule from '../Akademic/Schedule/Detail';
 import Test from '../Akademic/Test';
 import Dnp from '../Akademic/Dnp';
 import DetailTest from '../Akademic/Test/Detail';
 import Absent from '../Akademic/Absent';
+import AbsentGrade from '../Akademic/Absent/Absent-Grade'
+import AbsentSchedule from '../Akademic/Absent/Absent-Schedule'
+import AbsentList from'../Akademic/Absent/Absen-List'
+import SessionForm from '../Akademic/Absent/Session-Form'
 import Absensi from '../Akademic/Absent/Absensi';
 import Absen from '../Akademic/Absent/Absent';
 import Bayar from '../Akademic/Absent/Bayar';
 import Bill from '../Akademic/Bill';
 import DetailBill from '../Akademic/Bill/Edit';
 import Profile from '../Profile';
+import TestDate from '../Akademic/Schedule/TestDate';
 const Stack = createStackNavigator();
 const Router = () => {
     return (
@@ -185,9 +193,21 @@ const Router = () => {
                 name="Schedule" 
                 component={Schedule} 
                 options={{headerShown:false}}/>
+            <Stack.Screen
+                name="ScheduleGrade"
+                component={ScheduleGrade}
+                options={{headerShown:false}}/>
             <Stack.Screen 
                 name="DetailSchedule" 
                 component={DetailSchedule} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="ScheduleList" 
+                component={ScheduleList} 
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="AddSchedule" 
+                component={AddSchedule} 
                 options={{headerShown:false}}/>
             <Stack.Screen 
                 name="Test" 
@@ -205,6 +225,26 @@ const Router = () => {
                 name="Absent" 
                 component={Absent} 
                 options={{headerShown:false}}/>
+            <Stack.Screen
+                name="AbsentGrade"
+                component={AbsentGrade}
+                options={{headerShown:false}}
+            />
+            <Stack.Screen
+                name="AbsentSchedule"
+                component={AbsentSchedule}
+                options={{headerShown:false}}
+            />
+            <Stack.Screen
+                name="SessionForm"
+                component={SessionForm}
+                options={{headerShown:false}}
+            />
+            <Stack.Screen
+                name="AbsentList"
+                component={AbsentList}
+                options={{headerShown:false}}
+            />
             <Stack.Screen 
                 name="Absensi" 
                 component={Absensi} 
@@ -228,8 +268,11 @@ const Router = () => {
             <Stack.Screen
                 name="Profile"
                 component={Profile}
-                options={{headerShown:false}}
-            />
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="TestDate" 
+                component={TestDate} 
+                options={{headerShown:false}}/>
         </Stack.Navigator>
     )
 }
