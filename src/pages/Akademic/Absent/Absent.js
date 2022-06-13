@@ -20,9 +20,10 @@ const Absent = ({ navigation, route }) => {
   const [description, setDescription] = useState(null)
   const [absen, setAbsen] = useState(null)
   useEffect(() => {
-    let run = true
+    let run = false
+    console.log('route params', route.params);
     if (run) {
-      //console.log('params', data.schedule_subject_id_hidden);
+      console.log('params', data);
       let linko = data.student_id + '/' + data.tanggal + '/' + data.schedule_subject_id_hidden;
       //alert(linko)
       API.presence({
@@ -111,7 +112,7 @@ const Absent = ({ navigation, route }) => {
               title="Tanggal"
             />
             <InputRead
-              value={data.tanggal}
+              // value={data.tanggal}
             />
             <TextInput
               title="Mata Pelajaran"

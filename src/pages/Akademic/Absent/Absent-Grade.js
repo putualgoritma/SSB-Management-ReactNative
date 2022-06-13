@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { StyleSheet,Text,TouchableOpacity,View,ScrollView } from 'react-native';
-import {Footer,Header2,Title} from '../../../component'
+import {Footer,Header2,Title,Spinner} from '../../../component'
 import IconGrade from '../../../assets/icon/IconGrade'
+import API from '../../../service';
+import { useSelector } from 'react-redux';
 
 const ButtonMenu = (props) => {
     return (
@@ -16,13 +18,9 @@ const ButtonMenu = (props) => {
 
 
 const AbsentGrade =({navigation})=>{
-    const data = [
-        'U8',
-        'U10',
-        'U12',
-        'U14',
-        'U16',
-    ];
+    const [gradeperiode, setGradeperiode] = useState([{}]);
+    const TOKEN = useSelector((state) => state.TokenReducer);
+    const [loading, setLoading] = useState(true);
     const color = [
         "#A12424", 
         "#37A8C1", 
@@ -30,18 +28,52 @@ const AbsentGrade =({navigation})=>{
         "#1CA68D",
         "#3789C1",
     ];
+
+    useEffect(() => {
+        let run = true
+        let dataApi = {}
+        if(run){
+            API.absentGrades(TOKEN).then((result) => {
+            console.log(result);
+            let data = []
+            // data gradeperiode
+            result.data.map((item, index) => {
+              data[index] = {
+                id : item.id,
+                name : item.grade.name
+              }
+            })
+    
+            // insert data
+            console.log(data);
+            setGradeperiode(data)   
+            setLoading(false)         
+          }).catch((e) => {
+            let mes = JSON.parse(e.request._response)
+            alert(mes.message )
+            setLoading(false)
+          })
+        }
+        return () => {
+          run =false;
+        }
+      }, [])
+
     return(
         <View style={styles.container}>
+            {!loading ? null : 
+            <Spinner/>
+        }
             <ScrollView style={{flex:1}}>
                 <Header2/>
                 <Title  title="Absent Kelas"/>
                 <View style={{alignItems:'center'}}>
                     <View style={styles.wrappingBox}>
-                      {data.map((item, index) => {
+                      {gradeperiode.map((item, index) => {
                         let index_multi = Math.floor(index/5);
                         let index_color = index - (index_multi * 5);
                         return (
-                              <ButtonMenu warna = {color[index_color]} label={data[index]} navigation={()=>navigation.navigate('AbsentSchedule')}/>
+                              <ButtonMenu key={index} warna = {color[index_color]} label={item.name} navigation={()=>navigation.navigate('AbsentSchedule', {grade_periode_id : item.id })}/>
                           )
                       })}
                     </View>
